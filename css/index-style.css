@@ -18,6 +18,10 @@ li a {
   background-size: cover;
 }
 
+.sidebar-box {
+  z-index: 999;
+}
+
 .sidebar {
   background-color: #414658;
   height: 100vh;
