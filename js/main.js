@@ -1,7 +1,7 @@
 $(document).ready(function () {
   $(".loading-screen").fadeOut(500);
-  console.log("hel");
 });
+
 /*toggle sidebar at click event */
 $(".toggle-sidebar").click(function () {
   let left = $(".close").css("left");
@@ -33,7 +33,7 @@ $(".my-accordion h3").click(function () {
 });
 
 /*count down function to a specific date */
-setInterval(() => {
+countDown = () => {
   let eventDate = new Date("12/31/2022");
   let todayDate = new Date();
   let reminder = eventDate.getTime() - todayDate.getTime(),
@@ -57,7 +57,9 @@ setInterval(() => {
   $(".item:nth(1)").text(hoursCountMessage);
   $(".item:nth(2)").text(minutesCountMessage);
   $(".item:nth(3)").text(`${Math.floor(seconds)} Seconds`);
-}, 1000);
+  setTimeout(countDown, 1000);
+};
+countDown();
 
 /*message counter*/
 $(".contact-form textarea").keyup(function () {
